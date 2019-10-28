@@ -8,6 +8,11 @@ import { ComicListComponent } from "./comics/comic-list/comic-list.component";
 import { ComicItemComponent } from "./comics/comic-list/comic-item/comic-item.component";
 import { ComicDetailComponent } from "./comics/comic-detail/comic-detail.component";
 import { CharactersComponent } from "./characters/characters.component";
+import { StoreModule } from "@ngrx/store";
+import * as fromApp from "./store/app.reducer";
+import { EffectsModule } from "@ngrx/effects";
+import { ComicsEffects } from "./comics/store/comics.effects";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -19,7 +24,12 @@ import { CharactersComponent } from "./characters/characters.component";
     ComicDetailComponent,
     CharactersComponent
   ],
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([ComicsEffects])
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

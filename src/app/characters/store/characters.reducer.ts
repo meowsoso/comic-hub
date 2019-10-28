@@ -26,6 +26,11 @@ export function characterReducer(
           return index !== action.payload;
         })
       };
+    case CharacterActions.CharacterActionTypes.SET_CHARACTERS:
+      return {
+        ...state,
+        recipes: [...action.payload]
+      };
     default:
       return state;
   }

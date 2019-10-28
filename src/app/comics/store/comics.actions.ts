@@ -6,7 +6,7 @@ export interface Comic {
   slug: string;
   description: string;
   image: string;
-  characters: number[];
+  charactersArray: number[];
 }
 
 export enum ComicActionTypes {

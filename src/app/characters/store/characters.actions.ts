@@ -5,12 +5,14 @@ export interface Character {
   name: string;
   description: string;
   numberOfRoles: number;
+  isGood: boolean;
   image: string;
 }
 
 export enum CharacterActionTypes {
   ADD_CHARACTER = "[Character] ADD_CHARACTER",
-  REMOVE_CHARACTER = "[Character] REMOVE_CHARACTER"
+  REMOVE_CHARACTER = "[Character] REMOVE_CHARACTER",
+  SET_CHARACTERS = "[Character] SET_CHARACTERS"
 }
 
 export class AddCharacter implements Action {
@@ -25,4 +27,10 @@ export class RemoveCharacter implements Action {
   constructor(public payload: number) {}
 }
 
-export type CharacterActions = AddCharacter | RemoveCharacter;
+export class SetCharacters implements Action {
+  readonly type = CharacterActionTypes.SET_CHARACTERS;
+
+  constructor(public payload: Character[]) {}
+}
+
+export type CharacterActions = AddCharacter | RemoveCharacter | SetCharacters;
