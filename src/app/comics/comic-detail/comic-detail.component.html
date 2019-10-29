@@ -1,1 +1,23 @@
-<p>comic-detail works!</p>
+<div class="row">
+  <div class="col-xs-12">
+    <div [class]="isTextExpanded ? 'card' : 'card hide'">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img [src]="comic.image" class="rounded mx-auto d-block" [alt]="comic.name" style="max-height: 200px;">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ comic.name }}</h5>
+            <p class="card-text">
+              {{ !isTextExpanded ? (comic.description | slice: 0:300) + "..." : (comic.description) }}</p>
+
+            <button class="btn btn-primary"
+              (click)="onTextToggle()">{{ isTextExpanded ? 'Read less' : 'Read more'}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-characters></app-characters>

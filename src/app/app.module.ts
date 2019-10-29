@@ -13,6 +13,9 @@ import * as fromApp from "./store/app.reducer";
 import { EffectsModule } from "@ngrx/effects";
 import { ComicsEffects } from "./comics/store/comics.effects";
 import { HttpClientModule } from "@angular/common/http";
+import { AppRoutingModule } from "./app-routing.module";
+import { CharacterListComponent } from './characters/character-list/character-list.component';
+import { CharacterItemComponent } from './characters/character-list/character-item/character-item.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,14 @@ import { HttpClientModule } from "@angular/common/http";
     ComicListComponent,
     ComicItemComponent,
     ComicDetailComponent,
-    CharactersComponent
+    CharactersComponent,
+    CharacterListComponent,
+    CharacterItemComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    AppRoutingModule,
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([ComicsEffects])
   ],

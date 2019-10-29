@@ -1,0 +1,8 @@
+.card {
+  max-height: auto;
+
+}
+
+.card.hide {
+  max-height: 30vh;
+}

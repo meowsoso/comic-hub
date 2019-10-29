@@ -12,7 +12,8 @@ export interface Character {
 export enum CharacterActionTypes {
   ADD_CHARACTER = "[Character] ADD_CHARACTER",
   REMOVE_CHARACTER = "[Character] REMOVE_CHARACTER",
-  SET_CHARACTERS = "[Character] SET_CHARACTERS"
+  SET_CHARACTERS = "[Character] SET_CHARACTERS",
+  FETCH_CHARACTERS = "[Character] FETCH_CHARACTERS"
 }
 
 export class AddCharacter implements Action {
@@ -32,5 +33,12 @@ export class SetCharacters implements Action {
 
   constructor(public payload: Character[]) {}
 }
+export class FetchCharacters implements Action {
+  readonly type = CharacterActionTypes.FETCH_CHARACTERS;
+}
 
-export type CharacterActions = AddCharacter | RemoveCharacter | SetCharacters;
+export type CharacterActions =
+  | AddCharacter
+  | RemoveCharacter
+  | SetCharacters
+  | FetchCharacters;

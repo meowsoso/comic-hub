@@ -5,7 +5,16 @@ export interface State {
 }
 
 const initialState: State = {
-  characters: []
+  characters: [
+    {
+      id: 1,
+      name: "test",
+      isGood: true,
+      numberOfRoles: 2222,
+      description: "handsome",
+      image: "path"
+    }
+  ]
 };
 
 export function characterReducer(

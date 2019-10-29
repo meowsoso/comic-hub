@@ -1,27 +1,30 @@
-import { Component, OnInit } from "@angular/core";
-
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Comic } from "../store/comics.actions";
+import { Store } from "@ngrx/store";
+import * as fromApp from "../../store/app.reducer";
+import { Subscription } from "rxjs";
+import { map } from "rxjs/operators";
 @Component({
   selector: "app-comic-list",
   templateUrl: "./comic-list.component.html",
   styleUrls: ["./comic-list.component.css"]
 })
-export class ComicListComponent implements OnInit {
-  comics = [
-    {
-      name: "comic1",
-      description: "hello world"
-    },
-    {
-      name: "comic2",
-      description: "hello world"
-    },
-    {
-      name: "comic3",
-      description: "hello world"
-    }
-  ];
+export class ComicListComponent implements OnInit, OnDestroy {
+  comics: Comic[];
+  subscription: Subscription;
 
-  constructor() {}
+  constructor(private store: Store<fromApp.AppState>) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.subscription = this.store
+      .select("comics")
+      .pipe(map(comicsState => comicsState.comics))
+      .subscribe((comics: Comic[]) => {
+        this.comics = comics;
+      });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

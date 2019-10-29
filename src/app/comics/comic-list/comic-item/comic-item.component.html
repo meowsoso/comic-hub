@@ -1,8 +1,11 @@
-<div class="card" style="max-height: 50vh;">
-  <img src="http://placekitten.com/250/150" class="card-img-top img-responsive" alt="..." style="max-width: 20vw;">
-  <div class="card-body">
-    <h6 class="card-title">{{ comic.name }}</h6>
-    <p class="card-text" style="font-size: 0.8em;">Some quick example
-    </p>
+<a style="cursor: pointer;" [routerLink]="[index]" class="list-group-item clearfix">
+  <div class="card " style="max-height: 60vh;">
+    <img [src]="comic.image" class="card-img-top comic-cover img-responsive" alt="..."
+      style="max-width: 20vw; height:auto">
+    <div class="card-body">
+      <h6 class="card-title">{{ comic.name }}</h6>
+      <p class="card-text" style="font-size: 0.8em;">
+        {{ (comic.description.length > 80)? (comic.description | slice: 0:80) + "..." : (comic.description) }}</p>
+    </div>
   </div>
-</div>
+</a>

@@ -31,6 +31,11 @@ export function comicReducer(
         ...state,
         comics: updatedComics
       };
+
+    case ComicActions.ComicActionTypes.GET_COMIC:
+      return {
+        ...state.comics[action.payload]
+      };
     default: {
       return state;
     }
