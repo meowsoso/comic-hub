@@ -1,0 +1,25 @@
+<div class="backdrop"></div>
+<div class="add-box">
+  <form #addCharForm="ngForm" (ngSubmit)="onSubmit(addCharForm)">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" class="form-control" ngModel name="name" required />
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea type="text" row="4" id="description" class="form-control" ngModel name="description" required />
+      </div>
+  <div class="form-group">
+      <label for="image">Image URL</label>
+      <input type="url"
+      id="image"
+      class="form-control"
+      ngModel
+      name="image"
+      required>
+  </div>
+  <button class="btn btn-primary" type="submit"
+  [disabled]="!addCharForm.valid">Add</button>
+
+</form>
+</div>

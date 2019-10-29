@@ -16,6 +16,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { CharacterListComponent } from './characters/character-list/character-list.component';
 import { CharacterItemComponent } from './characters/character-list/character-item/character-item.component';
+import { AddCharacterComponent } from './add-character/add-character.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CharacterItemComponent } from './characters/character-list/character-it
     ComicDetailComponent,
     CharactersComponent,
     CharacterListComponent,
-    CharacterItemComponent
+    CharacterItemComponent,
+    AddCharacterComponent
   ],
   imports: [
     BrowserModule,

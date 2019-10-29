@@ -6,14 +6,14 @@ export interface State {
 
 const initialState: State = {
   characters: [
-    {
-      id: 1,
-      name: "test",
-      isGood: true,
-      numberOfRoles: 2222,
-      description: "handsome",
-      image: "path"
-    }
+    // {
+    //   id: 1,
+    //   name: "test",
+    //   isGood: true,
+    //   numberOfRoles: 2222,
+    //   description: "handsome",
+    //   image: "path"
+    // }
   ]
 };
 
@@ -38,7 +38,7 @@ export function characterReducer(
     case CharacterActions.CharacterActionTypes.SET_CHARACTERS:
       return {
         ...state,
-        recipes: [...action.payload]
+        characters: [...action.payload]
       };
     default:
       return state;

@@ -22,16 +22,11 @@ export class CharacterListComponent implements OnInit, OnDestroy {
   index: number;
   subscription: Subscription;
   charSub: Subscription;
-  state: fromCharacters.State;
 
   constructor(
     private route: ActivatedRoute,
     private store: Store<fromApp.AppState>
-  ) {
-    store
-      .pipe(select("characters"))
-      .subscribe(data => (this.characters = data.characters));
-  }
+  ) {}
 
   ngOnInit() {
     // get comic index
@@ -50,13 +45,12 @@ export class CharacterListComponent implements OnInit, OnDestroy {
       .select("characters")
       .pipe(map(charactersState => charactersState.characters))
       .subscribe((characters: Character[]) => {
-        // characters.map(character => {
-        //   if (this.comic.charactersArray.indexOf(character.id) !== 0) {
-        //     this.characters.push(character);
-        //   }
-        // });
-        console.log(characters);
-        this.characters = characters;
+        characters.map(character => {
+          if (this.comic.charactersArray.indexOf(character.id) !== -1) {
+            this.characters.push(character);
+          }
+        });
+        console.log(this.characters);
       });
   }
 
