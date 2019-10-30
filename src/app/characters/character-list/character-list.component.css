@@ -6,6 +6,7 @@ div.card {
   background: rgba(160, 185, 135, 0.5);
   border-radius: 3px;
   border: darkolivegreen 2px solid;
+  margin: 5px 10px;
 }
 
 

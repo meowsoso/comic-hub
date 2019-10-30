@@ -1,27 +1,29 @@
 # ComicHub
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
+Simple static web page made for comic fans to view and edit their favourite superhero comics and characters.
+This project was made for practising Angular and was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+-Bootstrap 4
+-Ng-Bootstrap
+-NgRx
+-NgRx/Effects
 
-## Build
+## Challenges
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The major obstacle was understanding how Redux work and how to manage the data flow with it. I spent most of the time setting up actions, reducers and effects for managing states with Redux.
+Besides, applying TypeScript was a bit confusing at beginning but it soon made sense and I really like the concept of it.
 
-## Running unit tests
+## Future improvement
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+There are many improvements to be made to make it a better application:
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+-Implement user authentication.
+-Connect to fully-functional back-end to complete the CRUD system.
+-Write unit tests and End to End tests to catch bugs and help future development.
+-Breakdown main app module into functional modules for a better structure.
