@@ -3,9 +3,11 @@
   class="card-img-top" [alt]="character.name" style="max-height: 200px;">
 <div class="card-body" style="max-height: 50vh;">
   <h5 class="card-title">{{ character.name }}</h5>
+  <p class="card-text">No. Series: {{character.numberOfRoles}}</p>
   <p class="card-text" [ngbPopover]="character.description" [openDelay]="300" placement="top"
     triggers="mouseenter:mouseleave" popoverTitle="Description">
-    {{ (character.description.length > 200)? (character.description | slice: 0:200) + "..." : (character.description) }}
+    {{ (character.description.length > 150)? (character.description | slice: 0:150) + "..." : (character.description) }}
   </p>
+
   <button type="button" class="ml-2 mb-1 close" (click)="onDelete()">X</button>
 </div>
