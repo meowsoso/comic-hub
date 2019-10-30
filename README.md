@@ -1,6 +1,7 @@
 # ComicHub
 
 Simple static web page made for comic fans to view and edit their favourite superhero comics and characters.
+[Link to Site](https://comic-hub1234.firebaseapp.com)
 This project was made for practising Angular and was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
 ## Development server
