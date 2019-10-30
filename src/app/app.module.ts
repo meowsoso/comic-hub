@@ -1,6 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
 import { ComicsComponent } from "./comics/comics.component";
@@ -39,6 +39,7 @@ import { handleImgErrorDirective } from "./handle-img-error/handle-img-error.dir
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
+    NgbModule,
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([ComicsEffects])
   ],

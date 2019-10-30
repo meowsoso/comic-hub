@@ -4,7 +4,7 @@
     style="max-width: 20vw; height:auto">
   <div class="card-body">
     <h6 class="card-title">{{ comic.name }}</h6>
-    <p class="card-text" style="font-size: 1em;">
+    <p class="card-text">
       {{ (comic.description.length > 150)? (comic.description | slice: 0:150) + "..." : (comic.description) }}</p>
   </div>
 </a>

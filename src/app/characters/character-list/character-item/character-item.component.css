@@ -2,7 +2,7 @@ button.close {
   position: absolute;
   right: 5%;
   bottom: 0;
-  color: red;
+  color: white;
 
 }
 
@@ -10,8 +10,19 @@ div.card-body {
   padding: 5px;
 }
 
+.card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  -webkit-text-stroke: 1px black;
+  color: white;
+  text-shadow: 3px 3px 0 black, -1px -1px 0 black, 1px -1px 0 black,
+    -1px 1px 0 black, 1px 1px 0 black;
+}
+
 p.card-text {
   font-size: 0.7em;
   margin: 0;
   text-align: justify;
+  color: floralwhite;
+  font-weight: bold;
 }

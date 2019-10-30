@@ -1,8 +1,23 @@
 .card {
   max-height: auto;
+  background: rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  margin-bottom: 30px;
 
+}
+
+.card-title {
+  font-size: 1.5em;
+  -webkit-text-stroke: 1px rgb(170, 17, 17);
+  color: white;
+  text-shadow: 3px 3px 0 rgb(170, 17, 17), -1px -1px 0 rgb(170, 17, 17), 1px -1px 0 rgb(170, 17, 17),
+    -1px 1px 0 rgb(170, 17, 17), 1px 1px 0 rgb(170, 17, 17);
 }
 
 .card.hide {
   max-height: 30vh;
+}
+
+.card-text {
+  color: floralwhite;
 }

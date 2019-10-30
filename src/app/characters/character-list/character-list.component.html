@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" (click)="onInitAddChar()">Add Characters</button>
+<button type="button" class="btn btn-warning add-character" (click)="onInitAddChar()">Add Characters</button>
 <app-add-character *ngIf="isAddingMode" (close)="onExitAdd()" [index]="index" [comic]="comic"></app-add-character>
 
 <div class="col-xs-12">

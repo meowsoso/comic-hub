@@ -3,3 +3,12 @@ body {
   background: url('https://portsmouthcomiccon.com/wp-content/uploads/2017/09/background-comic.jpg');
   background-size: contain;
 }
+
+.popover {
+  width: 40vw;
+
+}
+
+.nav {
+  background: rgba(210, 1, 1, 0.4);
+}

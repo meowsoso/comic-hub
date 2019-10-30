@@ -3,6 +3,15 @@
   width: auto;
 }
 
+.card-title {
+  font-size: 1.5em;
+  -webkit-text-stroke: 1px rgb(170, 17, 17);
+  color: white;
+  text-shadow: 3px 3px 0 rgb(170, 17, 17), -1px -1px 0 rgb(170, 17, 17), 1px -1px 0 rgb(170, 17, 17),
+    -1px 1px 0 rgb(170, 17, 17), 1px 1px 0 rgb(170, 17, 17);
+}
+
 p.card-text {
-  color: white
+  color: white;
+  font-size: 1em;
 }
