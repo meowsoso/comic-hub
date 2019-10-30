@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: url('https://portsmouthcomiccon.com/wp-content/uploads/2017/09/background-comic.jpg');
+  background-size: contain;
+}
