@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-3" *ngFor="let comic of comics; let i = index">
+  <div class="col-3 card" style="max-height: 60vh;" *ngFor="let comic of comics; let i = index">
     <app-comic-item [comic]="comic" [index]="i"></app-comic-item>
   </div>
 </div>

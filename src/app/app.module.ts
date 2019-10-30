@@ -18,6 +18,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { CharacterListComponent } from "./characters/character-list/character-list.component";
 import { CharacterItemComponent } from "./characters/character-list/character-item/character-item.component";
 import { AddCharacterComponent } from "./add-character/add-character.component";
+import { handleImgErrorDirective } from "./handle-img-error/handle-img-error.directive";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AddCharacterComponent } from "./add-character/add-character.component";
     CharactersComponent,
     CharacterListComponent,
     CharacterItemComponent,
-    AddCharacterComponent
+    AddCharacterComponent,
+    handleImgErrorDirective
   ],
   imports: [
     BrowserModule,

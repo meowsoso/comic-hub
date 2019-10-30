@@ -7,7 +7,7 @@ import * as ComicActions from "../../comics/store/comics.actions";
 import * as fromApp from "../../store/app.reducer";
 import * as fromCharacters from "../store/characters.reducer";
 import { Subscription } from "rxjs";
-import { map } from "rxjs/operators";
+import { map, combineLatest } from "rxjs/operators";
 import { Character } from "../store/characters.actions";
 
 @Component({
@@ -56,6 +56,8 @@ export class CharacterListComponent implements OnInit, OnDestroy {
         });
         this.characters = newCharacters;
       });
+
+    combineLatest(this.charSub, this.comicSub).pipe;
   }
 
   ngOnDestroy() {

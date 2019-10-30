@@ -1,0 +1,17 @@
+button.close {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  color: red;
+
+}
+
+div.card-body {
+  padding: 5px;
+}
+
+p.card-text {
+  font-size: 0.7em;
+  margin: 0;
+  text-align: justify;
+}

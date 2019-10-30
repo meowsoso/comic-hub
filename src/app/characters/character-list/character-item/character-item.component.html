@@ -1,1 +1,10 @@
-<p>character-item works!</p>
+<img [src]="character.image"
+  default="https://3.bp.blogspot.com/-XDyfcTvvZq4/Wu6Td9coonI/AAAAAAAAuPc/OVh5gp8WYf0jBIScsCcKlGvySonjBbSRwCLcBGAs/s1600/avengers%2Binfinity%2Bwar.jpg"
+  class="card-img-top" [alt]="character.name" style="max-height: 200px;">
+<div class="card-body" style="max-height: 50vh;">
+  <h5 class="card-title">{{ character.name }}</h5>
+  <p class="card-text">
+    {{ (character.description.length > 200)? (character.description | slice: 0:200) + "..." : (character.description) }}
+  </p>
+  <button type="button" class="ml-2 mb-1 close" (click)="onDelete()">X</button>
+</div>

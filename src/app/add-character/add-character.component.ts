@@ -68,16 +68,16 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
       description: form.value.description,
       image: form.value.description
     };
-
-    this.store.dispatch(new CharactersActions.AddCharacter(newCharacter));
-
     this.comic.charactersArray.unshift(newId);
+
     this.store.dispatch(
       new ComicsActions.UpdateComic({
         index: this.index,
         newComic: this.comic
       })
     );
+
+    this.store.dispatch(new CharactersActions.AddCharacter(newCharacter));
 
     form.reset();
     this.close.emit();

@@ -1,5 +1,12 @@
 <button type="button" class="btn btn-primary" (click)="onInitAddChar()">Add Characters</button>
 <app-add-character *ngIf="isAddingMode" (close)="onExitAdd()" [index]="index" [comic]="comic"></app-add-character>
 
-<p>{{ comic.name }}</p>
-<p>{{ characters[0].name}}</p>
+<div class="col-xs-12">
+  <div class="row">
+
+    <div class="col-2 card" *ngFor="let character of characters; let i = index">
+      <app-character-item [character]="character" [comic]="comic" [comicIndex]="index" [charIndex]="i">
+      </app-character-item>
+    </div>
+  </div>
+</div>
