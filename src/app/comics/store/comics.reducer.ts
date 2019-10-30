@@ -1,10 +1,11 @@
+import { Comic } from "../comic.model";
 import * as ComicActions from "./comics.actions";
 
 export interface State {
-  comics: ComicActions.Comic[];
+  comics: Comic[];
 }
 
-const initialState: State = {
+const initialState = {
   comics: []
 };
 
@@ -36,8 +37,7 @@ export function comicReducer(
       return {
         ...state.comics[action.payload]
       };
-    default: {
+    default:
       return state;
-    }
   }
 }

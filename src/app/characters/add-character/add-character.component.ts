@@ -9,12 +9,13 @@ import {
 import { NgForm } from "@angular/forms";
 import { Store } from "@ngrx/store";
 
-import * as fromApp from "../store/app.reducer";
-import * as CharactersActions from "../characters/store/characters.actions";
-import * as ComicsActions from "../comics/store/comics.actions";
+import * as fromApp from "../../store/app.reducer";
+import * as CharactersActions from "../store/characters.actions";
+import * as ComicsActions from "../../comics/store/comics.actions";
 import { Subscription } from "rxjs";
 import { map } from "rxjs/operators";
-import { Comic } from "../comics/store/comics.actions";
+import { Comic } from "src/app/comics/comic.model";
+import { Character } from "../character.model";
 
 @Component({
   selector: "app-add-character",
@@ -25,7 +26,7 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
   @Input() index: number;
   @Input() comic: Comic;
   @Output() close = new EventEmitter<void>();
-  characters: CharactersActions.Character[];
+  characters: Character[];
   private charSub: Subscription;
   private comicSub: Subscription;
 
@@ -35,16 +36,9 @@ export class AddCharacterComponent implements OnInit, OnDestroy {
     this.charSub = this.store
       .select("characters")
       .pipe(map(charactersState => charactersState.characters))
-      .subscribe((characters: CharactersActions.Character[]) => {
+      .subscribe((characters: Character[]) => {
         this.characters = characters;
       });
-
-    // this.comicSub = this.store
-    //   .select("characters")
-    //   .pipe(map(comicsState => comicsState.comics))
-    //   .subscribe((comics: Comic[]) => {
-    //     this.comic = comics[this.index];
-    //   });
   }
 
   ngOnDestroy() {

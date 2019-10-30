@@ -9,6 +9,6 @@ export interface AppState {
 }
 
 export const appReducer: ActionReducerMap<AppState> = {
-  comics: fromComics.comicReducer,
-  characters: fromCharacters.characterReducer
+  characters: fromCharacters.characterReducer,
+  comics: fromComics.comicReducer
 };

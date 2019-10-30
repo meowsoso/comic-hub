@@ -1,14 +1,12 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
+import { Store } from "@ngrx/store";
 
-import { Store, select } from "@ngrx/store";
-
-import * as ComicActions from "../../comics/store/comics.actions";
 import * as fromApp from "../../store/app.reducer";
-import * as fromCharacters from "../store/characters.reducer";
 import { Subscription } from "rxjs";
-import { map, combineLatest } from "rxjs/operators";
-import { Character } from "../store/characters.actions";
+import { map } from "rxjs/operators";
+import { Comic } from "src/app/comics/comic.model";
+import { Character } from "../character.model";
 
 @Component({
   selector: "app-character-list",
@@ -17,7 +15,7 @@ import { Character } from "../store/characters.actions";
 })
 export class CharacterListComponent implements OnInit, OnDestroy {
   // comics: Observable<{ comics: ComicActions.Comic[] }>;
-  comic: ComicActions.Comic;
+  comic: Comic;
   characters: Character[] = [];
   index: number;
   isAddingMode: boolean = false;
@@ -38,7 +36,7 @@ export class CharacterListComponent implements OnInit, OnDestroy {
     this.comicSub = this.store
       .select("comics")
       .pipe(map(comicsState => comicsState.comics))
-      .subscribe((comics: ComicActions.Comic[]) => {
+      .subscribe((comics: Comic[]) => {
         console.log(comics);
         this.comic = comics[index];
       });
@@ -56,8 +54,6 @@ export class CharacterListComponent implements OnInit, OnDestroy {
         });
         this.characters = newCharacters;
       });
-
-    combineLatest(this.charSub, this.comicSub).pipe;
   }
 
   ngOnDestroy() {

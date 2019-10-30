@@ -1,13 +1,5 @@
 import { Action } from "@ngrx/store";
-
-export interface Comic {
-  id: number;
-  name: string;
-  slug: string;
-  description: string;
-  image: string;
-  charactersArray: number[];
-}
+import { Comic } from "../comic.model";
 
 export enum ComicActionTypes {
   UPDATE_COMIC = "[Comic] UPDATE_COMIC",

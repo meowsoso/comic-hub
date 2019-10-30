@@ -4,19 +4,20 @@ import { Store } from "@ngrx/store";
 import * as fromApp from "../../../store/app.reducer";
 import * as ComicsActions from "../../../comics/store/comics.actions";
 import * as CharactersActions from "../../store/characters.actions";
-import { Router } from "@angular/router";
+import { Comic } from "src/app/comics/comic.model";
+import { Character } from "../../character.model";
 @Component({
   selector: "app-character-item",
   templateUrl: "./character-item.component.html",
   styleUrls: ["./character-item.component.css"]
 })
 export class CharacterItemComponent implements OnInit {
-  @Input() character: CharactersActions.Character;
-  @Input() comic: ComicsActions.Comic;
+  @Input() character: Character;
+  @Input() comic: Comic;
   @Input() comicIndex: number;
   @Input() charIndex: number;
 
-  constructor(private store: Store<fromApp.AppState>, private router: Router) {}
+  constructor(private store: Store<fromApp.AppState>) {}
 
   ngOnInit() {}
 

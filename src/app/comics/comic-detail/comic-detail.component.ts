@@ -2,9 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Store } from "@ngrx/store";
 
-import { Comic } from "../store/comics.actions";
 import * as fromApp from "../../store/app.reducer";
 import { map, switchMap } from "rxjs/operators";
+import { Comic } from "../comic.model";
 
 @Component({
   selector: "app-comic-detail",
@@ -18,7 +18,6 @@ export class ComicDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private store: Store<fromApp.AppState>
   ) {}
 

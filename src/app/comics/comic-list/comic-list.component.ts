@@ -1,9 +1,9 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
-import { Comic } from "../store/comics.actions";
 import { Store } from "@ngrx/store";
 import * as fromApp from "../../store/app.reducer";
 import { Subscription } from "rxjs";
 import { map } from "rxjs/operators";
+import { Comic } from "../comic.model";
 @Component({
   selector: "app-comic-list",
   templateUrl: "./comic-list.component.html",

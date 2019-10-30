@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { Comic } from "../../store/comics.actions";
+import { Comic } from "../../comic.model";
 
 @Component({
   selector: "app-comic-item",

@@ -17,7 +17,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
 import { CharacterListComponent } from "./characters/character-list/character-list.component";
 import { CharacterItemComponent } from "./characters/character-list/character-item/character-item.component";
-import { AddCharacterComponent } from "./add-character/add-character.component";
+import { AddCharacterComponent } from "./characters/add-character/add-character.component";
 import { handleImgErrorDirective } from "./handle-img-error/handle-img-error.directive";
 
 @NgModule({

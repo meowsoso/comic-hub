@@ -1,11 +1,9 @@
 import { Injectable } from "@angular/core";
-import { Store } from "@ngrx/store";
 import { Actions, Effect, ofType } from "@ngrx/effects";
 import { switchMap, map, tap } from "rxjs/operators";
 
 import * as ComicsActions from "./comics.actions";
 import * as CharactersActions from "../../characters/store/characters.actions";
-import * as fromApp from "../../store/app.reducer";
 import { HttpClient } from "@angular/common/http";
 
 @Injectable()
@@ -71,9 +69,5 @@ export class ComicsEffects {
     })
   );
 
-  constructor(
-    private actions$: Actions,
-    private http: HttpClient,
-    private store: Store<fromApp.AppState>
-  ) {}
+  constructor(private actions$: Actions, private http: HttpClient) {}
 }

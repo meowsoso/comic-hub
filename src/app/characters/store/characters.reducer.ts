@@ -1,7 +1,8 @@
 import * as CharacterActions from "./characters.actions";
+import { Character } from "../character.model";
 
 export interface State {
-  characters: CharacterActions.Character[];
+  characters: Character[];
 }
 
 const initialState: State = {
@@ -18,7 +19,7 @@ const initialState: State = {
 };
 
 export function characterReducer(
-  state = initialState,
+  state: State = initialState,
   action: CharacterActions.CharacterActions
 ) {
   switch (action.type) {

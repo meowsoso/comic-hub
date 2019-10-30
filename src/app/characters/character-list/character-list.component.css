@@ -1,6 +1,6 @@
 div.card {
   display: flex;
-  align-items: center;
+  text-align: center;
   justify-content: center;
   color: black;
   background: rgba(160, 185, 135, 0.5);

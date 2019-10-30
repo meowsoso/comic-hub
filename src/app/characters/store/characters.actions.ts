@@ -1,13 +1,5 @@
 import { Action } from "@ngrx/store";
-
-export interface Character {
-  id: number;
-  name: string;
-  description: string;
-  numberOfRoles?: number;
-  isGood?: boolean;
-  image: string;
-}
+import { Character } from "../character.model";
 
 export enum CharacterActionTypes {
   ADD_CHARACTER = "[Character] ADD_CHARACTER",
