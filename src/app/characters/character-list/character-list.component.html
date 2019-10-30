@@ -1,2 +1,5 @@
+<button type="button" class="btn btn-primary" (click)="onInitAddChar()">Add Characters</button>
+<app-add-character *ngIf="isAddingMode" (close)="onExitAdd()" [index]="index" [comic]="comic"></app-add-character>
+
 <p>{{ comic.name }}</p>
 <p>{{ characters[0].name}}</p>

@@ -4,17 +4,18 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rbga(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
 
 .add-box {
   position: fixed;
   top: 30vh;
-  left: 20vw;
-  width: 60vw;
+  left: 30vw;
+  width: 40vw;
   padding: 15px;
   z-index: 20;
   background: white;
-  box-shadow: 0 2px 8px rbga(0, 0, 0, 0.26);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 0.5em;
 }

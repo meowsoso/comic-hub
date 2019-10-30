@@ -9,14 +9,15 @@ import { ComicItemComponent } from "./comics/comic-list/comic-item/comic-item.co
 import { ComicDetailComponent } from "./comics/comic-detail/comic-detail.component";
 import { CharactersComponent } from "./characters/characters.component";
 import { StoreModule } from "@ngrx/store";
+import { FormsModule } from "@angular/forms";
 import * as fromApp from "./store/app.reducer";
 import { EffectsModule } from "@ngrx/effects";
 import { ComicsEffects } from "./comics/store/comics.effects";
 import { HttpClientModule } from "@angular/common/http";
 import { AppRoutingModule } from "./app-routing.module";
-import { CharacterListComponent } from './characters/character-list/character-list.component';
-import { CharacterItemComponent } from './characters/character-list/character-item/character-item.component';
-import { AddCharacterComponent } from './add-character/add-character.component';
+import { CharacterListComponent } from "./characters/character-list/character-list.component";
+import { CharacterItemComponent } from "./characters/character-list/character-item/character-item.component";
+import { AddCharacterComponent } from "./add-character/add-character.component";
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AddCharacterComponent } from './add-character/add-character.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([ComicsEffects])
   ],

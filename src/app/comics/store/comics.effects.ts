@@ -23,10 +23,10 @@ export class ComicsEffects {
       return comics.map(comic => {
         let charactersArray = [];
         comic.characters.map(character => {
-          charactersArray.push(character.id);
+          charactersArray.push(+character.id);
         });
         const updatedComic = {
-          id: comic.id,
+          id: +comic.id,
           name: comic.name,
           slug: comic.slug,
           description: comic.description,
@@ -50,15 +50,16 @@ export class ComicsEffects {
         "https://propertymecomics.s3.amazonaws.com/comics"
       );
     }),
-    // extracting comic book data from JSON, and log characters ID in array
+    // extracting character data from JSON
     map(comics => {
       const characters = [];
       const charactersId = [];
       comics.map(comic => {
         comic.characters.map(character => {
           if (charactersId.indexOf(character.id) === -1) {
-            characters.push(character);
             charactersId.push(character.id);
+            character.id = Number(character.id);
+            characters.push(character);
           }
         });
       });
